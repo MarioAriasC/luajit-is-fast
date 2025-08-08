@@ -1,4 +1,4 @@
-# Luajit is Fast (but Crystal is faster)
+# Luajit is Fast
 
 | Command | Execution Time | Notes |
 | ------------- | -------------- | -------------- |
@@ -7,16 +7,15 @@
 | `./gccimg-mc` | 369.2 ms | C code compiled with gcc, using multiple casting |
 | `./gccimg` | 348.9 ms | C code compiled with gccc, using single casting |
 | `./clangimg` | 348.6 ms | C code compiled with clang, using  single casting |
+| `./crystalimg` | 348.5 ms | Crystal code compiled with `--release` option |
 | `luajit img_with_ffi.lua` | 346.3 ms | Luajit code with FFI |
-| `./crystalimg` | 307.6 ms | Crystal code compiled with `--release` option |
 
 ```text
 luajit-is-fast on  main [!?] via C v11.4.0-gcc via 🌙 v5.4.7 via 🔮 v1.17.1
 ❯ hyperfine -w 3 ./crystalimg
 Benchmark 1: ./crystalimg
-  Time (mean ± σ):     307.6 ms ±   1.4 ms    [User: 304.6 ms, System: 2.7 ms]
-  Range (min … max):   306.1 ms … 310.1 ms    10 runs
-
+  Time (mean ± σ):     348.5 ms ±   2.7 ms    [User: 345.2 ms, System: 3.1 ms]
+  Range (min … max):   345.9 ms … 354.5 ms    10 runs
 
 luajit-is-fast on  main [!?] via C v11.4.0-gcc via 🌙 v5.4.7 via 🔮 v1.17.1 took 4s
 ❯ hyperfine -w 3 ./clangimg
